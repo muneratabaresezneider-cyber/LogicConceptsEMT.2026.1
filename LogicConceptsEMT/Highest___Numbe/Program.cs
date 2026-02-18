@@ -1,0 +1,21 @@
+﻿Console.Write("Ingrese primer numero: ");
+var number1String = Console.ReadLine();
+var number1Int = int.Parse(number1String!);
+Console.Write("Ingrese segundo numero: ");
+var number2String = Console.ReadLine();
+var number2Int = int.Parse(number2String!);
+Console.Write("Ingrese tercer numero: ");
+var number3String = Console.ReadLine();
+var number3Int = int.Parse(number3String!);
+if (number1Int > number2Int && number1Int > number3Int)
+{
+    Console.Write($"El numero mayor es: {number1Int}");
+}
+if (number2Int > number1Int && number2Int > number3Int)
+{
+    Console.Write($"El numero mayor es: {number2Int}");
+}
+if (number3Int > number1Int && number3Int > number2Int)
+{
+    Console.Write($"El numero mayor es: {number3Int}");
+}
