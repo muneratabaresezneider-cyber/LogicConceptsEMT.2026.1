@@ -5,4 +5,10 @@
   <Folder Name="/02/">
     <Project Path="Highest___Numbe/Highest___Numbe.csproj" Id="6aa47069-8815-40ed-ac70-a49d637a46f7" />
   </Folder>
+  <Folder Name="/03/">
+    <Project Path="ORDERING_OF_THREE_NUMBERS/ORDERING_OF_THREE_NUMBERS.csproj" Id="f6777d86-649a-4333-b5c1-86d7ddb28570" />
+  </Folder>
+  <Folder Name="/Shared/">
+    <Project Path="Shared/Shared.csproj" Id="f8ef11cc-f9e3-42dc-a1ee-2f1916845758" />
+  </Folder>
 </Solution>
