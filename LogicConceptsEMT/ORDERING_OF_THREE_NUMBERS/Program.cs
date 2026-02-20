@@ -1,20 +1,68 @@
-﻿Console.Write("Ingrese primer numero: ");
-var number1Int = int.Parse(Console.ReadLine()!);
-Console.Write("Ingrese segundo numero: ");
-var number2Int = int.Parse(Console.ReadLine()!);
-Console.Write("Ingrese tercer numero: ");
-var number3Int = int.Parse(Console.ReadLine()!);
+﻿
+using Shared;
+var answer = string.Empty;
+var options = new List<string> { "s", "n" };
 
-// Calcular mayor y menor usando Math, el del medio se obtiene por la suma
-int mayor = Math.Max(number1Int, Math.Max(number2Int, number3Int));
-int menor = Math.Min(number1Int, Math.Min(number2Int, number3Int));
-int medio = number1Int + number2Int + number3Int - mayor - menor;
 
-Console.WriteLine($"El numero mayor es: {mayor}");
-Console.WriteLine($"El numero del medio es: {medio}");
-Console.WriteLine($"El numero menor es: {menor}");
-// Mostrar información para verificar qué ejecutable/proyecto se está corriendo
-Console.WriteLine($"Ejecutable actual: {Environment.ProcessPath ?? System.Diagnostics.Process.GetCurrentProcess().MainModule?.FileName}");
-Console.WriteLine($"Directorio base: {AppContext.BaseDirectory}");
-Console.WriteLine("Presione una tecla para salir...");
-Console.ReadKey();
+do
+{
+    Console.WriteLine("Ingrese tres números diferntes para ordenarlos de mayor a menor");
+    var a = ConsoleExtension.GetInt("Ingrese el primer número: ");
+    var b = ConsoleExtension.GetInt("Ingrese el segundo número: ");
+    if (a == b)
+    {
+        Console.WriteLine("Los números deben ser diferentes, intente de nuevo");
+        continue;
+    }
+    var c = ConsoleExtension.GetInt("Ingrese el tercer número: ");
+    if (a == c || b == c)
+    {
+        Console.WriteLine("Los números deben ser diferentes, intente de nuevo");
+        continue;
+    }
+    if (a > b && a > c)
+    {
+        if (b > c)
+        {
+            Console.WriteLine($"El numero mayor es {a}, el numero del medio es {b} y el numero menor es {c}");
+        }
+        else
+        {
+            Console.WriteLine($"El numero mayor es {a}, el numero del medio es {c} y el numero menor es {b}");
+        }
+    }
+    else if (b > a && b > c)
+    {
+        if (a > c)
+        {
+            Console.WriteLine($"El numero mayor es {b}, el numero del medio es {a} y el numero menor es {c}");
+        }
+        else
+        {
+            Console.WriteLine($"El numero mayor es {b}, el numero del medio es {c} y el numero menor es {a}");
+        }
+    }
+    else if (c > a && c > b)
+    {
+        if (a > b)
+        {
+            Console.WriteLine($"El numero mayor es {c}, el numero del medio es {a} y el numero menor es {b}");
+        }
+        else
+        {
+            Console.WriteLine($"El numero mayor es {c}, el numero del medio es {b} y el numero menor es {a}");
+        }
+    }
+    do
+    {
+        answer = ConsoleExtension.GetValidOptions("¿Deseas continuar [S]í, [N]o?: ", options);
+    } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
+
+} while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
+Console.WriteLine("has salido de programa.");
+
+
+
+
+
+
