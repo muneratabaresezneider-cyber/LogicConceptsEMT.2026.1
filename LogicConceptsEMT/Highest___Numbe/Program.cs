@@ -33,4 +33,4 @@ do
     } while (!options.Any(x => x.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
 
 } while (answer!.Equals("s", StringComparison.CurrentCultureIgnoreCase));
-Console.WriteLine("Game Over.");
+Console.WriteLine("Has salido del programa.");
